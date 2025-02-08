@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://fictional-invention-wrg7jgwjx9jqc5gp7-8001.app.github.dev'),
 
     /*
     |--------------------------------------------------------------------------

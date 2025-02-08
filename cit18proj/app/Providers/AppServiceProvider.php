@@ -23,5 +23,8 @@ class AppServiceProvider extends ServiceProvider
         if (env('CODESPACES') || request()->server('HTTP_X_FORWARDED_PROTO') === 'https') {
             URL::forceScheme('https');
         }
+        if (env('APP_ENV') !== 'local') {
+            URL::forceRootUrl(env('APP_URL', 'https://fictional-invention-wrg7jgwjx9jqc5gp7-8001.app.github.dev'));
+        }
     }
 }
