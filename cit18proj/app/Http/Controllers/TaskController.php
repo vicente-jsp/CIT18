@@ -47,7 +47,6 @@ class TaskController extends Controller
             'description' => 'nullable|string',
             'is_completed' => 'boolean',
         ]);
-
         $task->update($request->all());
 
         return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
@@ -58,4 +57,12 @@ class TaskController extends Controller
         $task->delete();
         return redirect()->route('tasks.index')->with('success', 'Task deleted successfully.');
     }
+    public function toggle(Task $task)
+    {
+        $task->is_completed = !$task->is_completed;
+        $task->save();
+
+        return back();
+    }
+    
 }
